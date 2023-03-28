@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // задание 1
+        const num1 = +prompt('Введите значение num1');
+        const num2 = +prompt('Введите значение num2');
+
+
+        console.log(num1 <= 1 && num2 >= 3 ? 'Условия выполнены верно' : 'Условия неверны');
+
+        // задание 2
+
+        let test = true;
+        console.log(test === true ? '+++' : '---');
+
+        // задание 3
+
+        const day = +prompt('Введите число месяца от 1 до 31');
+
+        if (day >= 1 && day <= 10) { alert('Число из первой декады') }
+        else if (day >= 11 && day <= 20) { alert('Число из второй декады') }
+        else { alert('Число из третьей декады') };
+
+        // задание 4 
+
+        const number = +prompt('Введите число');
+
+        const thousands = (number - number % 1000) / 1000;
+        const numberUp = number - thousands * 1000;
+        const hundreds = (numberUp - numberUp % 100) / 100;
+        const tens = ((numberUp - hundreds * 100) - ((numberUp - hundreds * 100) % 10)) / 10;
+        const ones = (numberUp - hundreds * 100) % 10;
+
+        alert(`В числе ${number} количество сотен: ${hundreds}, десятков: ${tens}, единиц: ${ones}`);
+
+    </script>
+
+</body>
+
+</html>
