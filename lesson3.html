@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson3</title>
+</head>
+
+<body>
+
+    <script>
+        //задание 1
+
+        const cube = (num) => num ** 3;
+        console.log(cube(2) + cube(3));
+
+
+        //задание 2
+
+        const salary = +prompt('Введите размер Вашей З/П');
+
+        if (Number.isNaN(salary)) { console.log('значение задано неверно'); }
+        else {
+            const salaryNoTax = (salary) => salary * 0.87;
+            console.log('Размер заработной платы за вычетом налогов равен ' + salaryNoTax(salary));
+        }
+
+        //задание 3 
+
+        const firstNumber = +prompt('Введите первое число');
+        const secondNumber = +prompt('Введите второе число');
+        const thirdNumber = +prompt('Введите третье число');
+
+        const maxUnit = (num1, num2, num3) => {
+            if (num1 >= num2 && num1 >= num3) { return num1 }
+            else if (num2 >= num1 && num2 >= num3) { return num2 }
+            else { return num3 };
+        }
+
+        console.log(maxUnit(firstNumber, secondNumber, thirdNumber));
+
+        //задание 4
+
+        const num1 = +prompt('Введите первое число');
+        const num2 = +prompt('Введите второе число');
+        const choise = +prompt('Выберите действие: 1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление');
+
+
+        const sum = (num1, num2) => num1 + num2;
+        const division = (num1, num2) => num1 / num2;
+        const multi = (num1, num2) => num1 * num2;
+        const subtraction = (num1, num2) => (num1 >= num2) ? num1 - num2 : num2 - num1;
+
+        switch (choise) {
+            case 1: console.log(sum(num1, num2));
+                break;
+            case 2: console.log(subtraction(num1, num2));
+                break;
+            case 3: console.log(multi(num1, num2));
+                break;
+            case 4: console.log(division(num1, num2));
+                break;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
