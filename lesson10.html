@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10</title>
+</head>
+
+<body>
+
+    <style>
+        .content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .user-box {
+            width: 250px;
+            border: 1px solid grey;
+        }
+    </style>
+
+    <div class="content"></div>
+
+
+
+    <script src="lesson10.js"></script>
+    <script>
+
+        const datauser = JSON.parse(data);
+
+        const mainContent = document.querySelector('.content');
+
+        datauser.forEach(element => {
+
+            const userBox = document.createElement('div');
+            userBox.classList.add('user-box');
+
+            const userImg = document.createElement('img');
+            userImg.src = element.photo;
+            userImg.setAttribute('alt', 'photo');
+
+            const userName = document.createElement('p');
+            userName.textContent = element.firstName + ' ' + element.lastName;
+
+            const userPhone = document.createElement('p');
+            userPhone.textContent = element.phoneNumber;
+
+            mainContent.appendChild(userBox);
+            userBox.append(userImg);
+            userBox.append(userName);
+            userBox.append(userPhone);
+
+        });
+    </script>
+
+</body>
+
+</html>
