@@ -9,6 +9,25 @@
 </head>
 
 <body>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
     <script>
 
         // 1. Дан массив const arr = [1, 5, 7, 9] с помощью Math.min и spread оператора, найти минимальное число в массиве, решение задание должно состоять из одной строки
@@ -44,14 +63,23 @@
         // 3. Напишите рекурсивную функцию findElementByClass, которая принимает корневой элемент дерева DOM и название класса в качестве аргументов и возвращает первый найденный элемент с указанным классом в этом дереве.
 
 
-        function name(params) {
+        const rootElement = document.querySelector('.dropdown');
+        const targetElement = findElementByClass(rootElement, 'dropdown-item');
 
+        function findElementByClass(element, className) {
+
+            const rootEl = element;
+
+            if (rootEl.classList.contains(className)) {
+                return rootEl;
+            } else {
+
+                rootEl.children.forEach(elem => {
+                    return findElementByClass(elem, className);
+                });
+
+            }
         }
-
-
-        const rootElement = document.getElementById('root');
-        const targetElement = findElementByClass(rootElement, 'my-class');
-        console.log(targetElement);
 
     </script>
 </body>
