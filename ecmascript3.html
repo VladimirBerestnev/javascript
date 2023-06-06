@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecma 3</title>
+</head>
+<body>
+    
+
+<script>
+
+// Задание 1: ""Управление персоналом компании""
+
+class Employee {
+
+constructor(name){
+    this.name = name;
+}
+
+displayinfo() {
+    console.log(`Сотрудника зовут ${this.name}`);
+}}
+
+const emp = new Employee('Колыван Аполинариевич');
+
+emp.displayinfo();
+
+class Manager extends Employee {
+
+constructor(name, department){
+    super(name),
+    this.department = department;
+}
+
+displayinfo(){
+    console.log(`Сотрудник ${this.name} работает в отделе ${this.department}`);
+}}
+
+const man = new Manager('Петрович', 'Security');
+man.displayinfo();
+
+
+// ""Управление списком заказов""
+
+
+class Product {
+
+constructor(title, price){
+    this.title = title;
+    this.price = price;
+}
+
+getPrice(){
+    return this.price;
+}}
+
+class Order {
+
+constructor(orderNumber){
+    this.orderNumber = orderNumber;
+    this.products = [];
+}
+
+addProduct(product){
+    this.products.push(product);
+}
+
+getTotalPrice(){
+
+    let sum = 0;
+for (let i = 0; i < this.products.length; i++) {
+    const element = this.products[i];
+    const price = element.getPrice();
+        sum = sum + price;
+}
+
+return sum;
+
+}}
+
+const product1 = new Product('Limon', 100);
+const product2 = new Product('Apple', 50);
+const product3 = new Product('Banana', 302);
+
+const order = new Order(27);
+order.addProduct(product1);
+order.addProduct(product2);
+order.addProduct(product3);
+
+console.log(order.products);
+
+console.log(order.getTotalPrice());
+
+</script>
+
+</body>
+</html>
